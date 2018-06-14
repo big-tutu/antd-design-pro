@@ -132,6 +132,10 @@ const menuData = [{
       path: 'dragtable',
     },
     {
+      name: '拖拽移动',
+      path: 'dragmove',
+    },
+    {
       name: 'ReactQuill',
       path: 'react-quill',
     },

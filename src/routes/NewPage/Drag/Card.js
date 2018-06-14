@@ -106,15 +106,15 @@ export default class CardItem extends React.Component {
           connectDragPreview( // 预览
             <div style={{ ...style, opacity }}>
               <span>{text}</span>
-              {connectDragSource(connectDropTarget(
+              {connectDragSource(connectDropTarget( // 绑定拖拽资源和拖拽目标
                 <a style={{ float: 'right' }}>拖拽</a>
               ))}
             </div>
           )
-        ) : 
-        type === 3 ? (
-          'dddd'
-        ) : 'what'
+        ) :
+          type === 3 ? (
+            'dddd'
+          ) : 'what'
     );
   }
 }
