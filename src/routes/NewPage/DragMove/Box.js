@@ -9,13 +9,13 @@ const styles = {
   cursor: 'move',
 };
 
+// 可拖拽资源
 const boxSource = {
   beginDrag(props) {
     const { id, left, top } = props;
-    return { id, left, top };
+    return { id, left, top }; // 资源所有的属性
   },
 };
-
 
 @DragSource('box', boxSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
