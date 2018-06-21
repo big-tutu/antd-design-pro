@@ -118,7 +118,7 @@ const menuData = [{
 //   target: '_blank',
 // }
 {
-  name: 'NewPage',
+  name: '拖拽效果',
   icon: 'book',
   path: 'new-page',
   target: '_blank',
@@ -128,12 +128,16 @@ const menuData = [{
       path: 'drag',
     },
     {
-      name: '列表拖拽',
+      name: '表格拖拽',
       path: 'dragtable',
     },
     {
       name: '拖拽移动',
       path: 'dragmove',
+    },
+    {
+      name: '左右交换',
+      path: 'exchange',
     },
     {
       name: 'ReactQuill',

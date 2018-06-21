@@ -169,6 +169,9 @@ export const getRouterData = (app) => {
     '/new-page/dragmove': {
       component: dynamicWrapper(app, [], () => import('../routes/NewPage/DragMove')),
     },
+    '/new-page/exchange': {
+      component: dynamicWrapper(app, [], () => import('../routes/NewPage/Exchange')),
+    },
 
     '/new-page/react-quill': {
       component: dynamicWrapper(app, [], () => import('../routes/NewPage/ReactQuill')),

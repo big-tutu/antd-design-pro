@@ -33,7 +33,7 @@ const boxTarget = {
   },
 };
 
-@DragDropContext(HTML5Backend)
+@DragDropContext(HTML5Backend) // 绑定拖拽上下文，即父组件
 @DropTarget('box', boxTarget, connect => ({
   connectDropTarget: connect.dropTarget(),
 }))

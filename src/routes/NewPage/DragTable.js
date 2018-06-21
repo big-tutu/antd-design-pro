@@ -73,6 +73,7 @@ const rowSource = {
   beginDrag(props) {
     return {
       index: props.index,
+      text: props.text,
     };
   },
 };
