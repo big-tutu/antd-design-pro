@@ -50,6 +50,9 @@ const dropTarget = {
   isDragging: monitor.isDragging(),
 }))
 export default class Item extends React.Component {
+  handleClick = (e) => {
+    console.log('Click', e);
+  }
   render() {
     const {
       text,
@@ -63,7 +66,7 @@ export default class Item extends React.Component {
       connectDragSource &&
       connectDropTarget &&
       connectDragSource(
-        connectDropTarget(<div style={{ ...styles, opacity }}>{text}</div>)
+        connectDropTarget(<div onClick={this.handleClick} style={{ ...styles, opacity }}>{text}</div>)
       )
     );
   }
