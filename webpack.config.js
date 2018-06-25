@@ -1,24 +1,25 @@
-// 打包时间： 1 分 40秒
-// 项目启动时间：30 秒
+
+// 项目根目录下的新建的 webpack.config.js
 import ParallelUglifyPlugin from 'webpack-parallel-uglify-plugin';
 
 export default function (config, env) {
   console.log('webpackconfigjs', JSON.stringify(config.plugins));
   console.log('env', env);
   const { plugins } = config;
-  plugins.splice(3, 1, (new ParallelUglifyPlugin({
-    cacheDir: '.cache/',
-    uglifyJS: {
-      output: {
-        comments: false,
+  const uglifyJsPluginIndex = plugins.findIndex(val => val.constructor.name === 'UglifyJsPlugin');
+  if (uglifyJsPluginIndex > -1) {
+    plugins.splice(uglifyJsPluginIndex, 1, (new ParallelUglifyPlugin({
+      cacheDir: '.cache/',
+      uglifyJS: {
+        output: {
+          comments: false,
+        },
+        compress: {
+          warnings: false,
+        },
       },
-      compress: {
-        warnings: false,
-      },
-    },
-  })));
-  // const UglifyJsPluginIndex = plugins.findIndex(item => item.includes('UglifyJsPlugin'));
-  // console.log('UglifyJsPluginIndex', UglifyJsPluginIndex);
+    })));
+  }
   const newConfig = {
     ...config,
     plugins,
